@@ -1,0 +1,12 @@
+{
+  "name": "openapi-sample",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:es335ab/openapi-sample.git",
+  "license": "MIT",
+  "scripts": {
+    "gen:reference": "npx redoc-cli bundle openapi.yaml --output reference.html",
+    "gen:interface": "rm -rf ./types && npx @openapitools/openapi-generator-cli generate -g typescript-axios -i ./openapi.yaml -o ./types",
+    "serve": "npx http-server"
+  }
+}
